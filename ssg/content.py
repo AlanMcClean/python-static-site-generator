@@ -24,7 +24,7 @@ class Content(Mapping):
 
     @property
     def type(self):
-        return self.data["type"]        
+        return self.data["type"] if "type" in self.data else None
 
     @type.setter
     def type(self, type):
@@ -39,7 +39,7 @@ class Content(Mapping):
 
 
     def __len__(self):
-        return self.data.__len__()
+        return len(self.data)
 
 
     def __repr__(self):
